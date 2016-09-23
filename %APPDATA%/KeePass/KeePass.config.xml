@@ -5,7 +5,7 @@
 		<OmitItemsWithDefaultValues>true</OmitItemsWithDefaultValues>
 	</Meta>
 	<Application>
-		<LastUpdateCheck>2016-09-21T21:53:07Z</LastUpdateCheck>
+		<LastUpdateCheck>2016-09-23T02:29:39Z</LastUpdateCheck>
 		<LastUsedFile>
 			<Path>D:\workspace\personal\shadow\shadow.kdbx</Path>
 			<CredProtMode>Obf</CredProtMode>
@@ -25,7 +25,7 @@
 			<Item>Database@D:\workspace\personal\shadow</Item>
 		</WorkingDirectories>
 		<Start>
-			<CheckForUpdate>true</CheckForUpdate>
+			<CheckForUpdate>false</CheckForUpdate>
 			<CheckForUpdateConfigured>true</CheckForUpdateConfigured>
 		</Start>
 		<FileOpening />
@@ -100,6 +100,7 @@
 			<OverrideUIDefault>false</OverrideUIDefault>
 		</PasswordFont>
 		<BannerStyle>WinVistaBlack</BannerStyle>
+		<ShowRecycleConfirmDialog>false</ShowRecycleConfirmDialog>
 		<DataEditorFont>
 			<Family>Microsoft Sans Serif</Family>
 			<Size>8.25</Size>
@@ -125,7 +126,6 @@
 			<MinimumLength>0</MinimumLength>
 			<MinimumQuality>0</MinimumQuality>
 		</MasterPassword>
-		<MasterKeyOnSecureDesktop>true</MasterKeyOnSecureDesktop>
 		<ClipboardClearAfterSeconds>15</ClipboardClearAfterSeconds>
 	</Security>
 	<Native />
@@ -143,7 +143,7 @@
 		<UserProfiles />
 	</PasswordGenerator>
 	<Defaults>
-		<OptionsTabIndex>2</OptionsTabIndex>
+		<OptionsTabIndex>4</OptionsTabIndex>
 		<SearchParameters>
 			<ComparisonMode>InvariantCultureIgnoreCase</ComparisonMode>
 		</SearchParameters>
