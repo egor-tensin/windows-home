@@ -15,5 +15,5 @@ Using [config-links]:
     > pwd
     /cygdrive/d/workspace/personal/windows-home
 
-    > ../config-links/update.sh -d db.bin -s .
+    > ../config-links/update.sh -c .
     ...
