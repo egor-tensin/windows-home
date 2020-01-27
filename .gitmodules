@@ -1,0 +1,3 @@
+[submodule "linux-home"]
+	path = linux-home
+	url = https://github.com/egor-tensin/linux-home.git
