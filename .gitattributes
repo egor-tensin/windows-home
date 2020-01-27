@@ -1,4 +1,3 @@
 /%APPDATA%/**/* text=auto eol=crlf
 /%STACK_ROOT%/**/* text=auto eol=crlf
 /%USERPROFILE%/**/* text=auto eol=crlf
-/WinMerge/**/* text=auto eol=crlf
