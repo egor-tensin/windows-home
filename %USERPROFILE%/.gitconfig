@@ -1,1 +1,84 @@
-../linux-home/%HOME%/.gitconfig
+[user]
+	name = Egor Tensin
+	email = Egor.Tensin@gmail.com
+
+[core]
+	# Don't touch line endings (I hate the fact that this is an option).
+	# My go-to approach now is to store everything w/ LF line endings in
+	# index (using '* text=auto' in root .gitattributes), and checkout with
+	# specific line endings as required (using additional records in
+	# .gitattributes, like '*.sh text eol=lf', '*.bat text eol=crlf',
+	# etc.).
+	autocrlf = false
+
+[push]
+	# If no refspec is given, push to the branch with the same name.
+	default = upstream
+
+# Git submodules suck, but they suck less if you read
+# https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407.
+
+# Show submodule changes in a more verbose way.
+[diff]
+	submodule = log
+[status]
+	submoduleSummary = true
+[alias]
+	# Pull and sync submodules.
+	pulll = !git pull && git submodule sync --recursive && git submodule update --init --recursive
+
+# Automatically remove obsolete things/publish new things.
+[fetch]
+	# Prune old branches:
+	prune = true
+	# Prune old tags (since Git 2.17.0):
+	pruneTags = true
+[push]
+	# Push new tags:
+	followTags = true
+
+[log]
+	# Follow renames:
+	follow = true
+
+[mergetool]
+	# I don't even know why those are necessary, since we can abort and
+	# retry merges.
+	keepBackup = false
+
+[pull]
+	# Don't create a merge commit when pulling, fast-forward only.
+	ff = only
+
+[alias]
+	clean-all = clean -fdx
+	clean-ignored = clean -fdX
+	clean-unknown = clean -fd
+
+	l = log --oneline
+	# This is awesome: http://stackoverflow.com/a/1838938/514684
+	ll = log --graph --full-history --all --pretty=format:"%h%x09%d%x20%s"
+	lll = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+
+	# I think this is only usable on Cygwin, given all the file permission
+	# madness there:
+	xx = update-index --add --chmod=+x
+
+	hide = update-index --skip-worktree
+	unhide = update-index --no-skip-worktree
+	hidden = !git ls-files -v | grep --basic-regexp \"^\\([[:lower:]]\\|S\\)\"
+
+        # Squash the staging area with the latest commit.
+        # Pass "-a" to skip using `git add`.
+	fixup = !GIT_EDITOR=true git commit --amend
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	clean = git-lfs clean -- %f
+	required = true
+
+[include]
+        # Include a file with computer-specific settings (like a different
+        # [user] section under a specific directory, etc.).
+	path = ~/.gitconfig_local

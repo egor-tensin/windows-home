@@ -1,1 +1,11 @@
-../../../../linux-home/%HOME%/.config/sublime-text-3/Packages/User/Default.sublime-theme
+[
+    {
+        "class": "sidebar_label",
+        "font.bold": false,
+        "font.size": 13,
+    },
+    {
+        "class": "tab_label",
+        "font.size": 13,
+    },
+]
