@@ -1,3 +1,5 @@
+**Windows sucks, I never use this anymore.**
+
 Windows configuration files
 ===========================
 
